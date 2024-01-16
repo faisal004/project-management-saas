@@ -5,6 +5,7 @@ import { Medal } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 const textFont = Poppins({
   subsets: ['latin'],
@@ -52,7 +53,7 @@ const MarketingPage = () => {
           <Link href="/sign-up">Get AgileFlow for free</Link>
         </Button>
       </div>
-    </>
+      </>
   )
 }
 
