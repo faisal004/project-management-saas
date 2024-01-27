@@ -106,7 +106,7 @@ export const ListHeader = ({
         </div>
       )}
       <ListOptions
-        onAddCard={()=>{}}
+        onAddCard={onAddCard}
         data={data}
       />
     </div>
