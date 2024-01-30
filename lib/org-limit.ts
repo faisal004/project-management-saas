@@ -53,7 +53,7 @@ export const hasAvailableCount = async () => {
   const { orgId } = auth();
 
   if (!orgId) {
-    throw new Error ("Unauthorized");
+    throw new Error("Unauthorized");
   }
 
   const orgLimit = await db.orgLimit.findUnique({
@@ -83,4 +83,23 @@ export const getAvailableCount = async () => {
   }
 
   return orgLimit.count;
+};
+
+export const getIspro = async () => {
+  const { orgId } = auth();
+
+  if (!orgId) {
+    return false;
+  }
+
+  const orgLimit = await db.orgLimit.findUnique({
+    where: { orgId,  isPro: true},
+
+  });
+
+  if (!orgLimit) {
+    return false;
+  }
+
+  return orgLimit.isPro;
 };
